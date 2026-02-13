@@ -26,7 +26,9 @@ let carro = {
     },
 
     acelerar: function() {
-        if(this.velocidade < this.velocidadeMaxima) {
+        if (!this.estaLigado) {
+            return "Carro desligado, ligue-o para acelerar"
+        } else if(this.velocidade < this.velocidadeMaxima) {
             this.velocidade += 20; 
             return "Velocidade aumentada"
         }
@@ -45,3 +47,5 @@ let carro = {
 
 
 
+// ToDo: Mostrar velocidade a cada
+// ToDo: Criar uma função status() para mostrar informações do veículo
