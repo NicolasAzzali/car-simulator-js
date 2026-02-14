@@ -41,6 +41,10 @@ let carro = {
             return `Velocidade reduzida. ${this.velocidade} km/h`
         }
             return "O carro já esta parado"
+    },
+
+    status: function() {
+        return `Modelo:${this.modelo}, | Ligado:${this.estaLigado ? "Sim" : "Não"} | Velocidade:${this.velocidade} | Velocidade Máxima:${this.velocidadeMaxima}`;
     }
 };
 
