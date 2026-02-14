@@ -30,15 +30,15 @@ let carro = {
             return "Carro desligado, ligue-o para acelerar"
         } else if(this.velocidade < this.velocidadeMaxima) {
             this.velocidade += 20; 
-            return "Velocidade aumentada"
+            return `Velocidade aumentada. ${this.velocidade} km/h`
         }
-            return "Velocidade maxima"
+            return `Velocidade maxima. ${this.velocidade} km/h`
     },
 
     frear: function() {
         if(this.velocidade > 0) {
             this.velocidade -= 20;
-            return "Velocidade reduzida"
+            return `Velocidade reduzida. ${this.velocidade} km/h`
         }
             return "O carro já esta parado"
     }
@@ -47,5 +47,5 @@ let carro = {
 
 
 
-// ToDo: Mostrar velocidade a cada
+// ToDo: Mostrar velocidade a cada iteração
 // ToDo: Criar uma função status() para mostrar informações do veículo
