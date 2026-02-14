@@ -3,7 +3,7 @@ let carro = {
     modelo: "New Fiesta ST",
     cv: 182,
     cor: "Vermelho",
-    ano: 2012-2013,
+    ano: 2012,
     estaLigado: false,
     velocidade: 0,
     velocidadeMaxima: 220,
@@ -47,5 +47,4 @@ let carro = {
 
 
 
-// ToDo: Mostrar velocidade a cada iteração
 // ToDo: Criar uma função status() para mostrar informações do veículo
