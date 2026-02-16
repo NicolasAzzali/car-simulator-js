@@ -7,6 +7,7 @@ let carro = {
     estaLigado: false,
     velocidade: 0,
     velocidadeMaxima: 220,
+    freioDeMao: true,
 
 
     ligar: function() {
@@ -20,6 +21,8 @@ let carro = {
     desligar: function() {
         if (!this.estaLigado) {
             return "Veículo já está desligado"
+        } else if (!this.freioDeMao){
+            return "Freio de mão solto, puxe-o para desligar"
         }
         this.estaLigado = false
         return "Desligado"
@@ -28,6 +31,8 @@ let carro = {
     acelerar: function() {
         if (!this.estaLigado) {
             return "Carro desligado, ligue-o para acelerar"
+        } else if (this.freioDeMao) {
+            return "Freio de mão puxado, solte-o para acelerar"
         } else if(this.velocidade < this.velocidadeMaxima) {
             this.velocidade += 20; 
             return `Velocidade aumentada. ${this.velocidade} km/h`
@@ -43,6 +48,16 @@ let carro = {
             return "O carro já esta parado"
     },
 
+    toggleFreioDeMao: function() {
+        if (!this.freioDeMao) {
+            this.freioDeMao = true
+            return "Freio de mão puxado"
+        } 
+
+        this.freioDeMao = false;
+        return "Freio de mão solto"
+    },
+
     status: function() {
         return `Modelo:${this.modelo}, | Ligado:${this.estaLigado ? "Sim" : "Não"} | Velocidade:${this.velocidade} | Velocidade Máxima:${this.velocidadeMaxima}`;
     }
@@ -51,4 +66,4 @@ let carro = {
 
 
 
-// ToDo: Criar uma função status() para mostrar informações do veículo
+// ToDo: Criar uma função carSpecs() para mostrar especificações do veículo 
