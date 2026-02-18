@@ -50,9 +50,27 @@ let carro = {
 
     toggleFreioDeMao: function() {
         if (!this.freioDeMao) {
-            this.freioDeMao = true
-            return "Freio de mão puxado"
-        } 
+
+            this.freioDeMao = true;
+            console.log ("Freio de mão puxado");
+
+            if (this.velocidade > 0) {
+                const intervalo = setInterval(() => {
+                    
+                    this.velocidade -= 20;
+
+                    if (this.velocidade <= 0) {
+                        this.velocidade = 0;
+                        clearInterval(intervalo);
+                    }
+
+                    console.log(`Velocidade: ${this.velocidade} km/h`)
+                    
+                }, 500);
+            }
+
+            return;
+        }
 
         this.freioDeMao = false;
         return "Freio de mão solto"
