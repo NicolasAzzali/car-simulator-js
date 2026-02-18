@@ -78,6 +78,10 @@ let carro = {
 
     status: function() {
         return `Modelo:${this.modelo}, | Ligado:${this.estaLigado ? "Sim" : "Não"} | Velocidade:${this.velocidade} | Velocidade Máxima:${this.velocidadeMaxima}`;
+    },
+
+    specs: function() {
+        return `Fabricante: ${this.fabricante}\nModelo: ${this.modelo}\nAno: ${this.ano}\nPotência: ${this.cv}cv\nCor: ${this.cor}\nVelocidade máxima: ${this.velocidadeMaxima} km/h`;
     }
 };
 
